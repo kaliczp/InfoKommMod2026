@@ -4,9 +4,11 @@ teszturl = "https://odp.met.hu/climate/observations_hungary/daily_rain/recent/HA
 zipfilename = "P13600.zip"
 ## Fájl letöltés
 download.file(teszturl, zipfilename, mode = "wb")
+# Fájl név kinyerése a zip fájlból, itt nincs kicsomagolás, csak listázás.
+csvfile <- unzip(zipfilename, list = TRUE)$Name
 ## Kicsomagolás
 unzip(zipfilename, exdir = tempdir())
 ## Adat importálás az adat nevű objektumba
-adat <- read.table(file.path(tempdir(), "HABP_1RD_20260101_20260831_13600.csv"), sep = ";", head = TRUE)
+adat <- read.table(file.path(tempdir(), csvfile), sep = ";", head = TRUE)
 ## Csapadékösszeg kiíratás a lekérdezett állomás ez ideig feltöltött adataira
 sum(adat[,3])
