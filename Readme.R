@@ -1,10 +1,12 @@
+## A mérőállomás azonosítószáma
+StationID = "13801"
 ## Forrás URL
 teszturl = paste0("https://odp.met.hu/climate/observations_hungary/daily_rain/recent/HABP_1RD_",
-                  "13600",
+                  StationID,
                   "_akt.zip")
 ## Zip fájlnév változóból
 zipfilename = paste0("P",
-                     "13600",
+                     StationID,
                      ".zip")
 ## Fájl letöltés
 download.file(teszturl, zipfilename, mode = "wb")
