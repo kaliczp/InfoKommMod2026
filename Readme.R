@@ -1,7 +1,11 @@
 ## Forrás URL
-teszturl = "https://odp.met.hu/climate/observations_hungary/daily_rain/recent/HABP_1RD_13600_akt.zip"
+teszturl = paste0("https://odp.met.hu/climate/observations_hungary/daily_rain/recent/HABP_1RD_",
+                  "13600",
+                  "_akt.zip")
 ## Zip fájlnév változóból
-zipfilename = "P13600.zip"
+zipfilename = paste0("P",
+                     "13600",
+                     ".zip")
 ## Fájl letöltés
 download.file(teszturl, zipfilename, mode = "wb")
 # Fájl név kinyerése a zip fájlból, itt nincs kicsomagolás, csak listázás.
