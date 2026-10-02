@@ -20,3 +20,4 @@ adat <- read.table(file.path(tempdir(), csvfile), sep = ";", head = TRUE)
 sum(adat[,3])
 
 ## Nyers adatsor exportálás
+write.csv2(adat, "adat.csv")
