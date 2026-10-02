@@ -18,3 +18,5 @@ unzip(zipfilename, exdir = tempdir())
 adat <- read.table(file.path(tempdir(), csvfile), sep = ";", head = TRUE)
 ## Csapadékösszeg kiíratás a lekérdezett állomás ez ideig feltöltött adataira
 sum(adat[,3])
+
+## Nyers adatsor exportálás
