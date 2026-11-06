@@ -22,5 +22,12 @@ variables.df <- rawvariables$entries
 ## Állomáslista exportálás
 write.csv2(variables.df, "AszalyVariables.csv")
 
+### Adatlekérés
 ## Sopronkövesd ID
 stationid <- "7EC0406D-93A8-4616-ABA7-2B01CAE6F66E"
+dataurl <- paste0(
+  "https://aszalymonitoring.vizugy.hu/api.php?view=",
+  "getmeas",
+  "varid=",15,
+  "&statid=",stationid
+)
