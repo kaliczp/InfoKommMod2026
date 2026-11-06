@@ -29,7 +29,7 @@ dataurl <- paste0(
   "https://aszalymonitoring.vizugy.hu/api.php?view=",
   "getmeas",
   "&varid=",15,
-  "&fromdate=","2026-10-06",
+  "&fromdate=",Sys.Date()-89,
   "&statid=",stationid
 )
 rawmeas <- fromJSON(dataurl)
