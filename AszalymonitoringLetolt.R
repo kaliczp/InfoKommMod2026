@@ -29,6 +29,7 @@ dataurl <- paste0(
   "https://aszalymonitoring.vizugy.hu/api.php?view=",
   "getmeas",
   "&varid=",15,
+  "&fromdate=","2026-10-06",
   "&statid=",stationid
 )
 rawmeas <- fromJSON(dataurl)
@@ -38,6 +39,6 @@ meas.df <- rawmeas$entries[[1]]
 str(meas.df)
 meas.df$value <- as.numeric(meas.df$value)
 ## Állomáslista exportálás
-write.csv2(meas.df, "AszalyMeas.csv")
+write.csv2(meas.df, "AszalyMeas.csv", row.names = FALSE)
 
 sum(meas.df$value)
