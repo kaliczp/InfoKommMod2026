@@ -28,6 +28,16 @@ stationid <- "7EC0406D-93A8-4616-ABA7-2B01CAE6F66E"
 dataurl <- paste0(
   "https://aszalymonitoring.vizugy.hu/api.php?view=",
   "getmeas",
-  "varid=",15,
+  "&varid=",15,
   "&statid=",stationid
 )
+rawmeas <- fromJSON(dataurl)
+str(rawmeas)
+## Adattábla
+meas.df <- rawmeas$entries[[1]]
+str(meas.df)
+meas.df$value <- as.numeric(meas.df$value)
+## Állomáslista exportálás
+write.csv2(meas.df, "AszalyMeas.csv")
+
+sum(meas.df$value)
